@@ -52,8 +52,12 @@ export function fetchCatByBreed(breeId) {
             }
 
         })
-        .catch(function (error) {
-            console.log(error);
-        })
+        .catch(error => {
+            Notiflix.Report.failure(
+                'ERROR',
+                'Oops! Something went wrong! Try reloading the page!',
+                'Okay',);
+            loader.classList.add('ishidden');
+        });
 }
 
